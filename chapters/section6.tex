@@ -1,5 +1,5 @@
-%\section{section8}
-\label{sec:section8}
+%\section{section6}
+\label{sec:section6}
 
 \subsection{Alumni Community}
 \label{sec:alumni}
@@ -13,58 +13,69 @@
 	\item \getprefix{progLang}: \getprefix{langName}
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/Web%20Development/Inf%20268%20Utviklingsprosjekt}
 \end{itemize} 
-
-developed from scratch, without use of external frameworks or libraries. The goal was to develop
-an alumni community web page for the college. A requirement was that the delivered solution
-should include HTML, CSS3, JavaScript and PHP. For storing data, MySQL was selected as
-database. To have a local server running, Apache XAMPP was used. It was also a requirement
-that the pages should look as identical as possible regardless of the web browser that was used (I
-compared Chrome, Internet Explorer, Opera and Firefox).
+% space for readability
+This was a course that focused mainly on development for Web. 
+In this course, everything was developed from scratch, without use of external frameworks or libraries. 
+The goal was to develop an alumni community web page for the college. 
+A requirement was that the delivered solution should include HTML, CSS3, JavaScript and PHP. 
+For storing data, MySQL was selected as database. 
+To have a local server running, Apache XAMPP was used. 
+It was also a requirement that the pages should look as identical as possible regardless of the web browser that was used 
+(I compared Chrome, Internet Explorer, Opera and Firefox).
+\vspace{0.5em}\newline
 The course was split into two semesters, and the development project into five parts:
-1. Web page design/layout and policy
-2. Access Control
-3. Functionality and database model
-4. Posts and user administration
-5. Completion
-Users were to be divided into user groups; registered, moderator and administrator. Adminstrators
-was able to appoint new moderators and edit users, with the same rights as moderators.
-All registered users should be able to...
-• ...register, login, update their profile and be able to change/request a new password (if
-forgotten).
-• ... upload a profile picture, or select one of the existing ones that had previously been
-uploaded to the alumni page.
-• ... join or leave networks created within the alumni community. Users should be able to
-message each other, and also see a notification when new messages has arrived.
-• ... see a list of the other registered users.
-Moderators should be able to...
-• ...edit users profile (e.g. if inappropriate data was entered on their profile).
-• ...notify users they had breached the guidelines or block out/quarantine users (users was
-not to be deleted).
-• ...create/edit/delete existing topic fields (e.g. events, area of expertise, etc).
-In my project I mostly used PHP and HTML. Every page was created as a .php, as this allowed me
-to update the page layout in just one file, instead of having to update all the pages. The layout was
-then included at the location where it was to be used. It also simplified the use of function calls and
-checks to see if a user was logged in, and had the proper rights to view a given page. Database
-access was also handled via php, and JavaScript was not largely used (mostly to verify user input).
-The following is a short summary of what the delivered version included. For new users, they had a
-registration form, that gave feedback both with JavaScript and PHP if an error occurred. If the user
-continued, even though one or more fields contained errors, the given field(s) would have a text
-marked in red next to it, explaining what was wrong. Users also got their own profile, which allowed
-them to update their information, alongside changing their password (users that weren't logged in
-could request a new password if they forgot it). Moderators also had the ability to edit user profiles,
-e.g. if any added something in-appropriate.
-Users could also send messages to each other, and to ensure that the users would see if they had
-received a new message, the link to the messages in the navigation bar was updated with a
-number, indicating how many new, unread messages they had received. Users could message
-each other via their profile, or by searching for them from the member list (which listed all, or thosematching the search critera; name or e-mail). Users who broke the page policy could be put in
-quarantine. This rejected the users attempt to login, and giving them a message that they were
-quarantined. An information message could also be set, that would explain to the given user why
-they were quarantined.
+\begin{enumerate}
+	\item Web page design/layout and policy
+	\item Access Control
+	\item Functionality and database model
+	\item Posts and user administration
+	\item Completion
+\end{enumerate}
+% space for readability
+The users were divided into the following user groups; registered, moderator and administrator. 
+Adminstrators was able to appoint new moderators and edit users, with the same rights as moderators.
+\vspace{0.5em}\newline	
+All registered users should be able to\ldots
+\begin{itemize}
+	\item \ldots register, login, update their profile and be able to change/request a new password (if	forgotten).
+	\item \ldots upload a profile picture, or select one of the existing ones that had previously been uploaded to the alumni page.
+	\item \ldots join or leave networks created within the alumni community. Users should be able to message each other, and also see a notification when new messages has arrived.
+	\item \ldots see a list of the other registered users.
+\end{itemize}
+% space for readability
+Moderators should be able to\ldots
+\begin{itemize}
+	\item \ldots edit users profile (e.g. if inappropriate data was entered on their profile).
+	\item \ldots notify users they had breached the guidelines or block out/quarantine users (users should not be deleted).
+	\item \ldots create/edit/delete existing topic fields (e.g. events, area of expertise, etc).
+\end{itemize}
+% space for readability
+In my project I mostly used PHP and HTML. 
+Every page was created as a .php, as this allowed me to update the page layout in just one file, instead of having to update all the pages. 
+The layout was then included at the location where it was to be used. 
+It also simplified the use of function calls and checks to see if a user was logged in, and had the proper rights to view a given page. 
+Database access was also handled via php, and JavaScript was not largely used (mostly to verify user input).
+\vspace{0.5em}\newline
+The following is a short summary of what the delivered version included. 
+For new users, they had a registration form, that gave feedback both with JavaScript and PHP if an error occurred. 
+If the user continued, even though one or more fields contained errors, the given field(s) would have a text marked in red next to it, explaining what was wrong. 
+Users also got their own profile, which allowed them to update their information, alongside changing their password 
+(users that weren't logged in could request a new password if they forgot it). 
+Moderators also had the ability to edit user profiles, e.g. if any added something in-appropriate.
+\vspace{0.5em}\newline
+% TODO: Re-write this sentence below
+Users could also send messages to each other, and to ensure that the users would see if they had received a new message, the link to the messages in the navigation 
+bar was updated with a number, indicating how many new, unread messages they had received. 
+Users could message each other via their profile, or by searching for them from the member list (which listed all, or thosematching the search critera; name or e-mail). 
+Users who broke the page policy could be put in quarantine. 
+This rejected the users attempt to login, and giving them a message that they were quarantined. 
+An information message could also be set, that would explain to the given user why they were quarantined.
+\vspace{0.5em}\newline
 Moderators could register campus, area of expertise and networks (e.g. degree, courses, etc).
-Moderators could also create events. All of the aforementioned could be updated or deleted. For
-events, only those active were displayed (but administrators and moderators could see all on the
-creation page). Events that were out of date was not showed, and this was also true for future
-events (based on start date for the given event).
+Moderators could also create events. 
+All of the aforementioned could be updated or deleted. 
+For events, only those active were displayed (but administrators and moderators could see all on the creation page). 
+Events that were out of date was not showed, and this was also true for future events (based on start date for the given event).
 
 \subsection{Flea Market}
 \label{sec:flea_market}
@@ -78,6 +89,20 @@ events (based on start date for the given event).
 	\item \getprefix{progLang}: \getprefix{langName}
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/Web%20Development/Inf%20329%20XML%20-%20Oblig.%20oppg}
 \end{itemize} 
+% space for readability
+A school band arranged yearly a flea market, to increase their income. 
+This was a process lasting for months, starting with organization of the sales, to finally selling the various sales items. 
+The flea market consists of several departements, several people are involved and also a lot of money.
+Income overview and control is a necessity to be able to plan next years flea market. 
+Up until now, they used Excel sheets to keep an economical overview (participants sorted by departements).
+Every participant gets a bag of change, and can deliver income several times throughout the day.
+The participants on a Saturday is not necessarily the same as those on a Sunday (sales were only on Saturdays and Sundays). 
+A daily overview over departement sales is registered, and a control is done to check the money delivered against the registered income.
+\vspace{0.5em}\newline
+The goal was to re-write this web-application to use XML as data storage, as the currently database in use (Access) gave compability issues depending on the version used. 
+The assignment contained attachments showing screenshots of the Web-page, the Excel file and how the Access database looked. 
+A requirement was that the file containing the database data should be in XML, and that this file should be controlled by using XSD (since the XML file could be altered manually).
+It was also a requirement to create at least four different web-pages to show how they could use the created XML-files to present and store new data.
 
 \subsection[Applied Computer Science Project]{\getprefix{imt4003}}
 \label{sec:appl_comp_sci_proj}
@@ -89,6 +114,23 @@ events (based on start date for the given event).
 	\item \getprefix{ide}: \getprefix{ideName}
 	\item \getprefix{progLang}: \getprefix{langName}
 \end{itemize} 
+% space for readability
+In this course, our group worked on developing an A/B Test system. 
+The following is a short project description, taken from our group report:
+\begin{quote} 
+"The product is an Internet application, where the goal is to track user interaction. The
+developer/administrator is able to see the user interaction real time, and the interaction will also be
+stored in a database, to be shown for the developer/administrator later. This functionality is
+relevant when a person or a company wants to know the best possible user interface for a website.
+With this Internet application, you can present an interface for a user group, and then you can
+compare more interfaces with each other, to decide which one the user interacts with most
+efficient."
+\end{quote}
+Various frameworks were used in this project, but I those I was directly involved with was the Java
+Servlets and MySQL. In the development part, I had the responsbility for the database model, the
+database and the database operations. Since we used Model-View-Controller (MVC), some of the
+programming I did was related to the interfaces and connections between the GUI, the Controller
+and the Database.
 
 \subsection[Integration project]{\getprefix{imt4004}}
 \label{sec:key}
@@ -101,3 +143,25 @@ events (based on start date for the given event).
 	\item \getprefix{progLang}: \getprefix{langName}
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT4004-Integration-Project}
 \end{itemize} 
+% space for readability
+The original plan for this project was to create a 3D-simulation game that incorporated Darwins
+theory of evolution. The goal was to try helping students taking Machine Learning courses to learn
+an algorithm called "Genetic Algorithms". However, due to time restraints and complexity, this was
+changed and reduced to an unfinished web-page version (aimed at teaching Genetic
+Programming).
+\vspace{0.5em}\newline
+This version consisted of pages for students and teachers, where teachers could create new
+assignments, check student participation and adjust student scores based on their
+answers/progress. The students had access to creating and editing their profile, see game
+progress and score, and they could play a given game an unlimited number of times (but attempts
+and answers were logged in the database). After submission, the given game would no longer be
+playable.
+\vspace{0.5em}\newline
+The only game-element that was implemented was a LISP (reverse polish notation) game. The
+student was presented with an equation (e.g. 1 + (2 * 3) + (10 *10) + 30) and asked to write the
+LISP version of this. In addition, the student could see their answer represented as a tree-diagram
+(achieved by converting the input to a JSON-object, and passing it to the d3.js library).
+\vspace{0.5em}\newline
+The project was developed by using HTML5 and PHP, and included a data-visualization library
+called d3.js. D3.js was only used for creating the LISP tree, which was optional when the student
+were checking their answer. The data was stored in a MySQL database.

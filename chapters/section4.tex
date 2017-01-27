@@ -18,7 +18,7 @@
 In the two Java courses in my Bachelor, we had the same assignment, but with different requirements. 
 The main focus was to register two different animals (hares and lynx). 
 Common for both was the registration of their gender (male/female), length (Double), weight (Double), time of capture (day, month, year) and location (String). 
-The ID was to be incremented, and start with the initial for the given animal (e.g. L1, L2, ..., H1, H2, ...). 
+The ID was to be incremented, and start with the initial for the given animal (e.g. L1, L2, \ldots, H1, H2, \ldots). 
 For the hares, colour (String) and type (Char) was to be registered. 
 For the lynx, the length of their ears (Double).
 \vspace{0.5em}\newline
@@ -44,28 +44,33 @@ The main menu used JFrame, and the child windows used JDialog.
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/Android/ITE1621%20Applikasjoner%20for%20mobil%20og%20web}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+This was an introductory course to programming apps for Android. 
+It consisted of four mandatory assignments and a graded assignment. 
+The Android version that was targeted was Android 2.3 - 4.1, using Eclipse as IDE and Java as programming language.
+\vspace{0.5em}\newline
+The assignments consisted of creating a conversion app for different measure systems (distance, volume, mass, temperature and time), 
+passing data from one application to another (broadcasting, event logging, settings and SQLite) and creating a weather notification app. 
+The weather app downloaded XML data from a weather page in set intervals based on settings set by user. 
+The data was then parsed and displayed to user, and the user could set a temperature limit (min/max). 
+If the temperature was out of the set range, a notification should be shown to the user.
 
 \subsubsection{TracknHide}
 \label{sec:tracknhide}
-This project was part of the course grade, and consisted of developing an application that could
-show the different users location and route on a map. The project had two parts, an Android
-application and a Java web server.
+This project was part of the course grade, and consisted of developing an application that could show the different users location and route on a map. 
+The project had two parts, an Android application and a Java web server.
 \vspace{0.5em}\newline
-The Android application used Google Cloud Messaging (GCM) to send and receive data, and
-Google Maps (API v1) to present a map. By using MapOverlay, users could also show the adress
-when clicking a location on the map, and switch between Street – and SateliteView. On the map,
-the route and current position of logged in users with shared position was shown. Users could also
-choose to store their own or others route, which could later then be re-drawn on the map. The
-position data was retrieved by using the devices GPS, but the amount of position data sent was set
-by the user (amount of time passed or distance moved).
+The Android application used Google Cloud Messaging (GCM) to send and receive data, and Google Maps (API v1) to present a map. 
+By using MapOverlay, users could also show the adress when clicking a location on the map, and switch between Street – and SateliteView. 
+On the map, the route and current position of logged in users with shared position was shown. 
+Users could also choose to store their own or others route, which could later then be re-drawn on the map. 
+The position data was retrieved by using the devices GPS, but the amount of position data sent was set by the user (amount of time passed or distance moved).
 \vspace{0.5em}\newline
-The Java Web server was created using HTML, Java Servlets and JSP, running on Apache
-TomCat v7.0. It stored the user related information in a MySQL Database, and kept track over all
-the currently logged in users. The web pages was mainly targeted at an administrator, to give them
-the ability to view connected users, and disconnect if needed. The server was also the connection
-point for the users to share/receive position data and notifications via GCM.
+The Java Web server was created using HTML, Java Servlets and JSP, running on Apache TomCat v7.0. 
+It stored the user related information in a MySQL Database, and kept track over all the currently logged in users. 
+The web pages was mainly targeted at an administrator, to give them the ability to view connected users, and disconnect if needed. 
+The server was also the connection point for the users to share/receive position data and notifications via GCM.
 \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/Android/ITE1621%20Applikasjoner%20for%20mobil%20og%20web/Karaktergivende%20oppgave} 
-
 
 \subsection{TrackMyTeacher}
 \label{sec:trackmyteacher}
@@ -80,22 +85,18 @@ point for the users to share/receive position data and notifications via GCM.
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT5401-Mobile-Research}
 \end{itemize} 
 % space for readability
-In this course I tried to develop an indoor tracking prototype app for Android. The purpose was to
-be able to locate teachers and professors on campus, by measuring the WiFi-signals at their
-current location (if they had enabled/allowed tracking of their current location).
+In this course I tried to develop an indoor tracking prototype app for Android. 
+The purpose was to be able to locate teachers and professors on campus, by measuring the WiFi-signals at their current location 
+(if they had enabled/allowed tracking of their current location).
 \vspace{0.5em}\newline
-The server side of the application was developed using PHP (because the college server only ran
-PHP), which mainly handled data transfer between the Android app and the MySQL database.
-When data from the database was needed, the server retrieved the data, added it to an array as 
-JSON and printed it as HTML. This HTML was then converted to a JSONArray on the mobile
-device (as I stated in my report, it would probably have been much easier if one could have used
-Java Servlets, since one could overwrite the HTTP GET/POST methods).
+The server side of the application was developed using PHP (because the college server only ran PHP), which mainly handled data transfer between the Android app and the MySQL database.
+When data from the database was needed, the server retrieved the data, added it to an array as JSON and printed it as HTML. 
+This HTML was then converted to a JSONArray on the mobile device (as I stated in my report, it would probably have been much easier if one could have used Java Servlets, 
+since one could overwrite the HTTP GET/POST methods).
 \vspace{0.5em}\newline
-To get test data, I went to different buildings, rooms and floors spread out on campus (20 rooms,
-signals measured in all 4 corners plus the middle of the room). What I found when looking at the
-gathered data was that the measurement for the WiFi-signal was set too low (value=5). Therefore
-this prototype was not finished, as I did not have the time to re-measure all the rooms to get more
-accurate signal data.
+To get test data, I went to different buildings, rooms and floors spread out on campus (20 rooms, signals measured in all 4 corners plus the middle of the room). 
+What I found when looking at the gathered data was that the measurement for the WiFi-signal was set too low (value=5). 
+Therefore this prototype was not finished, as I did not have the time to re-measure all the rooms to get more accurate signal data.
 
 \subsection{BeregnSnitt}
 \label{sec:beregnsnitt}
@@ -107,22 +108,17 @@ accurate signal data.
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/Java/beregnSnitt}
 \end{itemize} 
 % space for readability
-When nearing the end of my Bachelor degree, I wanted to know what my average grade was, to
-see what colleges and universities I could apply to in regards to taking a Master degree. This lead
-to the development of “BeregnSnitt”. BeregnSnitt was a small, private Java project, which
-calculates an average score based on the grades the user has.
+When nearing the end of my Bachelor degree, I wanted to know what my average grade was, to see what colleges and universities I could apply to in regards to taking a Master degree. 
+This lead to the development of "BeregnSnitt". BeregnSnitt was a small, private Java project, which calculates an average score based on the grades the user has.
 \vspace{0.5em}\newline
-The user is presented with a GUI (Jframe and Jdialog), where s/he can enter the amount of A to
-E's achieved, the course points and the total points achieved (e.g. Bachelor = 180). I also added
-the possibility to add additional course grades, in case some courses varied (e.g. if the standard
-was 10, but one course had 3 points).
+The user is presented with a GUI (Jframe and Jdialog), where s/he can enter the amount of A to E's achieved, the course points and the total points achieved (e.g. Bachelor = 180). 
+I also added the possibility to add additional course grades, in case some courses varied (e.g. if the standard was 10, but one course had 3 points).
 \vspace{0.5em}\newline
-A Norwegian Java application I developed that calculates the average score of the grades
-achieved within a college. The main reason I created it was to see what colleges and universities I
-could apply to based on my current grade average. The user can enter the amount of A to E's
-achieved, the course points and the total points achieved (e.g. Bachelor = 180). One could also
-add additional grades (e.g. if some courses had different scoring). Then the user had to enter the
-grade and the course points.
+A Norwegian Java application I developed that calculates the average score of the grades achieved within a college. 
+The main reason I created it was to see what colleges and universities I could apply to based on my current grade average. 
+The user can enter the amount of A to E's achieved, the course points and the total points achieved (e.g. Bachelor = 180). 
+One could also add additional grades (e.g. if some courses had different scoring). 
+Then the user had to enter the grade and the course points.
 
 \subsection{Auto-reply for Android}
 \label{sec:auto_reply_android}
@@ -133,4 +129,18 @@ grade and the course points.
 	\item \getprefix{progLang}: \getprefix{java}, \getprefix{android}, \getprefix{xml}
 \end{itemize} 
 % space for readability
-
+% TODO: Re-view and re-write this
+This was a program I started on after learning Android. 
+The reason I started working on it was because one often gets text messages or calls when you cannot reply or answer. 
+Sometimes, people continue to text or call, and I therefore started working on what I call an Auto-reply app. 
+The auto-reply is sent out as a text message (SM)S, which could either be random or a set topic.
+\vspace{0.5em}\newline
+The auto-reply could be sent to only to those marked for it, or apply to all in the phones contact list. 
+The auto-reply was restricted by a delay, adjustable through the settings. 
+When a call or SMS came in, if the person calling/texting was on the Auto-reply list, a timer would start. 
+When the timer ran out, a check would occur to see if the SMS/lost call was unread. If so, a SMS would be sent out. 
+\vspace{0.5em}\newline
+The SMS that were sent from the Auto-reply are random, but that was mostly because I created it for myself. 
+I planned to later add some Machine Learning logic to it, so that it could reply somewhat intelligently to the SMS, instead of a random text.
+\vspace{0.5em}\newline
+The development started with using Java and Eclipse, but was later changed to using Android Studio as IDE.

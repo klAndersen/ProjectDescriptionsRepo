@@ -16,7 +16,6 @@ Suggestions for sections:
 \end{itemize} 
 
 
-
 \subsection{Teacher-Student questionnaire system}
 \label{sec:inf116_teacher_system}
 % space for readability
@@ -29,6 +28,13 @@ Suggestions for sections:
 	\item \getprefix{progLang}: \getprefix{vb}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+A two-part group project, where the first part was the teacher system and the second the system for the students.
+I was part of the group working with the teacher system (we were 3 people working on this), where the system should be able to create new questions for a given course, 
+and set parameters for the evaluation. 
+The teacher would need to get a statistical overview of students answers, and also be able to export/store these to a file. 
+The tools used were Visual Studio IDE, Visual Basic as programming language (course requirement), and MySQL as database. 
+The GUI was Windows Forms.
 
 \subsection[System Developing Project]{\getprefix{inf165}}
 \label{sec:inf165_sys_dev}
@@ -40,6 +46,10 @@ Suggestions for sections:
 	\item \getprefix{ide}: \getprefix{macc}, \getprefix{mysqlw}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+This was a group project in a system development course. 
+The task was to develop a system for hotel management, where the user should be able to check-in/out guests, see available rooms, room expenses and retrieve economical reports.
+The system was created by using Microsoft Access and MySQL as database. Microsoft Visio was used to create DataFlow Diagrams.
 
 \subsection[Flash Programming]{\getprefix{inf330}}
 \label{sec:flash_prog}
@@ -51,15 +61,38 @@ Suggestions for sections:
 \item \getprefix{ide}: \getprefix{afcs}, \getprefix{fldev}
 \item \getprefix{progLang}: \getprefix{flash}, \getprefix{as3}
 \end{itemize} 
-% space for readability
 
 \subsubsection{Space Invaders}
 \label{sec:space_invaders}
--details-
+% TODO: Re-view and re-write this
+A scroll-game like space invaders, where the player controls a space-ship. 
+This was developed in Flash, using ActionScript 3 as scripting language. 
+The topic for the development was chosen by the group. 
+A short scenario context is that the player is a farmer kidnapped by aliens, and have to save the Earth (and his harvest).
+\vspace{0.5em}\newline
+I handled the design and development of the enemies, game settings and playing sound/music. 
+The game contained up to six levels, where the player could select which to play (but level 2-6 had to be opened first by completing previous level. 
+The player got points for destroying enemies (asteroids and aliens). 
+After two minutes of play, the boss appeared. 
+The game also contained a "Top 10" list displaying the scores for the players.
 
 \subsubsection{Tower of Knowlegde}
 \label{sec:tower_of_knowledge}
--details-
+% TODO: Re-view and re-write this
+Tower defence game meets quiz where the goal is to attack only the wrong answers. 
+The topic was selected by the group. 
+The player can put out none or more towers, and the player had to let the "correct" answer only pass.
+\vspace{0.5em}\newline
+Answers was shot by clicking the answer, presuming it was within the given towers range. 
+Points were given for attacking enemies, and reduced for each answer passing the goal. 
+The player was not told if the answer was correct until the game had ended, and when the game was over, the player was added to the Top 10 list presuming their score was high enough. 
+My responsibilities in this project was the development of the main menu, reading (questions, answers, Top 10) and writing (Top 10) to file, sound/music.
+\vspace{0.5em}\newline
+The game was developed using Flash and ActionScript. The IDE was Adobe Flash CS 4 and FlashDevelop (actionscript). 
+In addition, I also created a small program for the creation of questions and answers (since the variables was read from file using URLVariables), which was written in Visual Studio, C\#.
+\vspace{0.5em}\newline
+This is how the file content looked like:
+\textit{qst=question1?,question2?\&alt=alt1,alt2\&ans=ans1,ans2}
 
 \subsection[3D Modelling]{\getprefix{ite1606}}
 \label{sec:ite1606_3d_modelling}
@@ -72,4 +105,15 @@ Suggestions for sections:
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/3D%20Modeling/ITE1606%203Dmodellering}
 \end{itemize} 
 % space for readability
-
+% TODO: Re-view and re-write this
+This course was based on learning how to create 3D-models and how to work with a 3D-modeling tool, namely 3DS MAX. 
+This was a purely introductory course, so I cannot claim to have any expertise after this course, other than a general understanding.
+\vspace{0.5em}\newline
+In the first two assignments, we were asked to create a sketch of a car, and create textures based on clothing, carpets, etc. 
+The next four assignments were based on creating various models (a Lego block with our name on it using the texture we created), a car, 
+a stadium for the car to drive on and a character representation of ourselves).
+\vspace{0.5em}\newline
+The last two assignments covered Skeletal movement (making the character able to move, and give it a short animation) and lighting 
+(we had to simulate "evening sun" without using plug-ins or "daylight system").
+\vspace{0.5em}\newline
+I also had a course in Game Design, where we used UDK and Unreal to model a game world (the code was written using Unreal Script).

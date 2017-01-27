@@ -12,6 +12,22 @@
 	\item \getprefix{progLang}: \getprefix{py}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+Group project course where the goal was to teach us how it was to work in a global team not having all members around, and also working on expanding an existing system. 
+The task my group was given was to develop a multi-choice questionnaire plugin for the Learning Management System (LMS) Open edx. 
+\vspace{0.5em}\newline
+Aside from creating the pages and functionality for creating, editing and displaying a questionnaire, we were given three tasks 
+(the third was never started, and thus is excluded from this summary). 
+In this questionnaire, students should be able to select their confidence level in regards to their submitted answers. 
+Depending on the confidence level selected (0 = low, 1 = normal, 2 = high), their total score could be increased (or decreased if wrong answer was selected).
+\vspace{0.5em}\newline
+The second task was peer-review, where the students could select whether or not they thought the rest of the class found this to be a difficult question. 
+Bonus points were then given to the students who selected the one that got the most selections.
+\vspace{0.5em}\newline
+Aside from handling administrative tasks (I was the Scrum Master in this project), the parts I worked on was the creation of answer alternatives, 
+the answers submitted by the students and and grade for the submitted questionnaires (with confidence level). 
+In the second task, I worked on the part related to difficulty level and updating of the students score.
+During this project, I used Arch Linux as OS, PyCharm as IDE and Python as programming language.
 
 \subsection[Advanced Project Work]{\getprefix{imt5251}}
 \label{sec:adv_proj_work}
@@ -24,6 +40,16 @@
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT5251_AdvProjWork}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+Preliminary work for my Master thesis, which was mostly focused on creating a simplistic prototype. 
+The topic for my Master thesis was to develop a Chat Agent that could answer students programming questions,  and also help them learn to be better at asking good questions. 
+The Chat Agent was to be implemented as a module (an XBlock) in the Learning Management System (LMS) Open edx. 
+Python was used, as this is the programming language which the XBlocks are written in, using  PyCharm as editor. 
+\vspace{0.5em}\newline
+During this development, a simple chat interface was created which could connect to StackOverflow.com. 
+One could ask questions, but it only returned the first question/answer it found on Stack Overflow. 
+The prototype was also presented to two students that gave feedback and suggestions for features. 
+The plan for further development was to implement AI in my Master thesis using a hybrid algorithm of Hidden-Markov-Model and Bayes Net. 
 
 \subsection{Master thesis: Predicting coding question quality}
 \label{sec:master_thesis}
@@ -37,3 +63,14 @@
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT4904_MasterThesis_Code}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+During the presentation of the thesis topic, I was told that my topic was not just too large for a Master thesis, but even too large for a Ph.d. thesis. 
+It therefore needed to be reduced drastically, which ended up with the topic being an attempt to predict question quality at Stack Overflow by looking at existing questions. 
+\vspace{0.5em}\newline
+In my thesis, I used Arch Linux as an operative system since it was easier to develop for Python. 
+I used MySQL as a database, which contained all the data from Stack Overflow (downloaded from StackExchange Archive). 
+Data was extracted from the database into Python using a library called pandas, which also had the ability to export the data to a CSV file. 
+\vspace{0.5em}\newline
+The questions were originally in HTML format, so they were therefore cleansed using Beautiful Soup 4 (bs4). 
+To get the vocabulary over all the words used in all the selected questions, CountVectorizer from the machine learning library sklearn was used. 
+Features were extracted and replaced with feature detectors, and these were then used to create a model for predicting the question quality. 

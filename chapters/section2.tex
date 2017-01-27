@@ -16,6 +16,21 @@
 	\item C\#-\getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%23/Oblig%20Inf315}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+This assignment was based on using Oracle to create object-types based on a given UML-diagram. 
+It should store properties, bids (and these could not be withdrawn), buyers, real estate agents and the firm the agent belonged to.
+When calling the to\_string, all property information should be returned. 
+Bids should only be updated if they were bigger than the last, the date of acceptance for bid had expired, or if the date of bid acceptance was later than the first date given. 
+One should be able to retrieve bids based on urgency (e.g. if it expired that same day).
+One should be able to retrieve all bids from a given buyer, but only for those whose deadline had not expired. 
+There was also always only one seller for each property.
+\vspace{0.5em}\newline
+% TODO: Re-view and re-write this
+A slighty altered version of the the one listed above. It was divided into three parts, storing data in memory (RAM), db4o and Prevayler. 
+We were given a UML-diagram of the architecture, which was using the three-layer-model. 
+We were also given a pre-made GUI (Windows Forms), and needed only to create the object classes and Control class. 
+The Control class should mainly be able to add, delete, update, retrieve and search for data provided by the user.
+This was developed using Visual Studio as IDE and C\# as programming language.
 
 \subsection{Bachelor Thesis: CleanMyFolder}
 \label{sec:bach_thesis}
@@ -27,6 +42,21 @@
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%23/Bachelor%20thesis}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+Tools used: Visual Studio 2010, C\#. UMLet to create the UML diagram. 
+The HTML files for the help was written using PSPad, and compiled with Microsoft HTML Help Workshop. Windows OS only.
+\vspace{0.5em}\newline
+The thesis was based on the following problem: "I want more space on the harddisk - which files do I delete?" 
+The main focus in this thesis was the development of a file management system that could scan the computer for folder and files at a given location, 
+and search for duplicates (including zip-files).
+\vspace{0.5em}\newline
+Due to complexity with the ZIP-library in C\#, and time restraints the zip-file and duplicate search was excluded 
+(the idea was to look for folders/files that were exact duplicates, and replace these with a shortcut to the folder/file of the users selection). 
+The finished system has the ability to search the whole hard drive or a given path, which then lists the folder(s) and file(s) based on set criterias (file type, size, date). 
+\vspace{0.5em}\newline
+The folder(s) are listed in a TreeView, and the files in a DataGridview. 
+By right clicking a folder, the user could opt to search the given folder using the same scan criterias, or open the location in Windows Explorer. 
+The user also has the ability to move or delete a given folder or a selection of files.
 
 \subsection[Computer Graphics]{\getprefix{ite1605}}
 \label{sec:comp_grahphics}
@@ -38,9 +68,18 @@
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/XNA/Datamaskingrafikk}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+Course using Visual Studio C\# and XNA to create games and simulations. 
+Assignments consisted of drawing a 3D-cube and a spinning 3D-ball using lines, matrices and the XYZ. 
+There was also a task to create a representation of the planetary system (I didn't manage to properly complete that assignment), and also the use of particle effects and lighting/shaders. 
+In the graded programming assignment I delivered a game based on the 3D-models developed in the 3D-modeling course. 
 
 \subsubsection{Graded Assignment: Car game}
 \label{sec:comp_grahphics_graded_assignment}
+% TODO: Re-view and re-write this
+The game was a simplistic car game, where you drove a car around in a "stadium", music could be turned on/off, 
+and you got points for hitting the flags that was placed in static locations inside the stadium.
+\vspace{0.5em}\newline
 \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/XNA/Datamaskingrafikk/Karaktergivende%20oppgave}
 
 \subsection{Model Train registration}
@@ -48,6 +87,16 @@
 \getprefix{type}: \getprefix{priv} \\
 \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%23/ModellTog}
 % NEWLINE
+% TODO: Re-view and re-write this
+This was a program I developed for one of my friends. 
+He had a thing for model trains, and wanted a program that gave him the ability to register trains, wagons, accessories and create a wish list.
+\vspace{0.5em}\newline
+Trains and wagons had almost the same specifications, so for these the same GUI controllers were used. 
+The accessories had other specifications, as these could be railroads, trees, figurines, houses, etc.
+\vspace{0.5em}\newline
+For the wish list, he could register the model number, name, sales location and price. 
+The program was originally developed in Java, but he had issues with running the program. 
+It was therefore later re-written using Visual Studio and C\#.
 
 \subsection{Multipurpose editor}
 \label{sec:multipurpose}
@@ -58,3 +107,18 @@
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%23/MultiPurpose}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+At the time, I often experienced MySQL Workbench being slow at start-up, and sometimes I wanted to just a quick peek at the tables or data in the database. 
+Creating Readme's for programs and systems developed could also be slightly time-consuming, so I created this simple program I named "MultiPurpose".
+\vspace{0.5em}\newline
+The program was written in C\#, and used ODBC to connect to MySQL. This program had three functionalities:
+\begin{enumerate}
+	\item Text Generator: When creating experience level requirements for games, setting these values can be quite time-consuming. 
+	The same can be said if you are testing a lot of "random" links with a set incremental numeric value. 
+	Here one can enter a start/end text, and append numbers (min, max, step). 
+	If one's testing links, you can select which browser to open the link in (converted to links if text contained 'http:/').
+	\item ReadMe generator which saved the text you entered to a text file. 
+	Options included overwriting existing file, adding asterics and version number into the text.
+	\item 3. Connecting to, and displaying information from a MySQL database, after the user had entered a username, password and host/port. 
+	Gives the ability to select a database, select a table, and run some queries against the database.
+\end{enumerate}

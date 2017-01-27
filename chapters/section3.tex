@@ -11,11 +11,24 @@
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%2B%2B/ITE1546%20Programmering%20i%20C%2B%2B}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+This was a pure introductory course, as it was targeted at the students studying electronics. 
+Therefore there was no GUI, only command line in Visual Studio, using native C++.
+There were three mandatory assignments, and one graded. 
+\vspace{0.5em}\newline
+The first assignment was mainly focusing on creating a menu-program that could execute some equations, and convert numbers to their textual value. 
+The second was based on creating a cinema ticket system, which should only register one performance, sales data and vacant sales, etc, which was stored in a text file. 
+If a new performance was registered, the old was deleted. 
+The third was based on Bitmap pixel colour manipulation, where one should be able to alter the colour of all pixels or grey-scaling them all.
 
 \subsubsection{Graded assignment: recipeProgram} %TODO: Find name of program
 \label{sec:recipe_program}
 \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%2B%2B/ITE1546%20Programmering%20i%20C%2B%2B/Karaktergivende}
 % NEWLINE
+% TODO: Re-view and re-write this
+The graded assignment consisted of creating a system that could store recipes, calculate a recipes nutrition data, list the data for a given nutrition, 
+list recipes containing more than X nutritions, etc. 
+The nutrition data was extracted from an Excel-file provided by the teacher.
 
 \subsection{Machine Learning library}
 \label{sec:ml_library}
@@ -28,6 +41,10 @@
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Machine-Learning/tree/master/MachineLearning}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+This was written in Visual Studio 2013 using Managed C++, to use in the Machine Learning course I had. 
+It is not a complete project, as it is mostly built on the algorithms taught in the course, and those that were asked for during the mandatory assignments. 
+Aside from algorithms, it contains a Conversion class (string to numeric, naitive to Managed C++, vica versa, etc), a Matrix class, a class for statistics and exceptions.
 
 \subsection[Computational Forensics]{\getprefix{imt4641}}
 \label{sec:comp_forensics}
@@ -40,6 +57,17 @@
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT4641-Computational-Forensics}
 \end{itemize} 
 % space for readability
+% TODO: Re-view and re-write this
+This course was development only, where we were tasked with coming up with our own idea to develop a tool or system that was relevant to the track and courses we had.
+My project focused on creating a re-active tool (used after an incident has occurred) that analysed Android databases (SQLite). 
+It was developed using Visual Studio C++, using Windows Forms as GUI.
+\vspace{0.5em}\newline
+I re-used parts of the graphical design that I used in my Bachelor thesis, since some qualities were similar. 
+The tool lists the folders, SQLite database(s) and tables in a TreeView.
+In the Treeview, the folder is the parent, and the database(s) are the children. 
+The table(s) in turn, are the child(ren) of the selected database. 
+When a table was selected, the data was listed in a DatagridView. 
+One could also search for a given entry in the listed treeview, where matches were highlighted in yellow.
 
 \begin{comment}
 

@@ -3,34 +3,70 @@
 
 % \getprefix{key}
 
-\subsection{Real-estate registration}
-\label{sec:real_estate}
+\subsection[Management of Databases]{\getprefix{inf313}}
+\label{sec:inf313_real_estate}
 % space for readability
 \begin{itemize} 
 	\item \getprefix{level}: \getprefix{bach}
 	\item \getprefix{type}: \getprefix{ass}
 	\item \getprefix{college}: \getprefix{buc}
 	\item \getprefix{course}: \getprefix{inf313}
-	\item \getprefix{ide}: \getprefix{ideName}
+	\item \getprefix{ide}: \getprefix{vs}, \getprefix{osqldev}, db4o\footnote{
+		Open source object database for Java and .NET developers.
+	}, \\ Prevayler (Bamboo.Prevalence)\footnote{\url{http://bbooprevalence.sourceforge.net/}}.	
+	\item \getprefix{progLang}: \getprefix{oracle} (first \getprefix{ass}), \getprefix{csharp} (second \getprefix{ass})
 	\item Oracle-\getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/Databases/INF%20315%20-%20Oracle/Oblig1}
 	\item C\#-\getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%23/Oblig%20Inf315}
 \end{itemize} 
 % space for readability
-% TODO: Re-view and re-write this
-This assignment was based on using Oracle to create object-types based on a given UML-diagram. 
-It should store properties, bids (and these could not be withdrawn), buyers, real estate agents and the firm the agent belonged to.
-When calling the to\_string, all property information should be returned. 
-Bids should only be updated if they were bigger than the last, the date of acceptance for bid had expired, or if the date of bid acceptance was later than the first date given. 
-One should be able to retrieve bids based on urgency (e.g. if it expired that same day).
-One should be able to retrieve all bids from a given buyer, but only for those whose deadline had not expired. 
-There was also always only one seller for each property.
+In this course, we were given two mandatory assignments that were graded. 
+Both assignments was based on solving the same task, but using different development tools.
+The assigment contained an UML-model to describe the expected architecture.
+
+\subsubsection{Oracle}
+\label{sec:inf313_oracle}
+A real estate agent wants an Oracle database for registering sales objects that contains sellers, buyers and bids. 
+For each buyer/property, only one bid is stored, and the buyer is bound by the bid until the deadline for acceptance expires.
+Therefore, bids cannot be withdrawn.
+If the buyer wants to register a new bid (where the buyer already has an existing bid), the bid would be accepted only if:
+\begin{itemize}
+	\item the acceptance deadline on the previous bid expired
+	\item the new bid is higher (greater amount) regardless of the acceptance deadline\footnote{
+		The acceptance deadline specified only by date - bid comes out throughout the day (until 24:00).
+	}
+	\item the new bid has the same amount, but later acceptance date
+\end{itemize}
+It is possible to sign up as stakeholder without submitting bids, but everyone who bid will automatically be registered as well as stakeholder (if they are not already there).
 \vspace{0.5em}\newline
-% TODO: Re-view and re-write this
-A slighty altered version of the the one listed above. It was divided into three parts, storing data in memory (RAM), db4o and Prevayler. 
-We were given a UML-diagram of the architecture, which was using the three-layer-model. 
-We were also given a pre-made GUI (Windows Forms), and needed only to create the object classes and Control class. 
-The Control class should mainly be able to add, delete, update, retrieve and search for data provided by the user.
-This was developed using Visual Studio as IDE and C\# as programming language.
+For a given buyer, it should be possible to get all current bids, ie. bids where the deadline has not yet expired.
+When checking for bids that expires the same day, these should be returned with a the string "Urgent".
+In all other cases, it should return "Not urgent" - even if the time limit has expired.
+It should be possible to return all current bids (deadline has not expired) from a given buyer, which lists the propery information. 
+There is always only one vendor for each property.
+If the property is co-owned, the registered name should contain the person representing the owner. 
+When calling the to\_string() function, all information stored in the given object should be returned.
+
+\subsubsection[C\#]{\getprefix{csharp}}
+\label{sec:inf313_csharp}
+A real estate agent needs an object-oriented application for registration of properties and bids on these properties. 
+An UML-model was given representing the architecture, along with the client side of the application (using Windows Forms as GUI).
+An assumption we could make was that all objects would fit in RAM simultaneously, and we were tasked to create two different version. 
+Both versions should ensure persistence by using two different libraries, the first using db4o, the other Prevayler (Bamboo.Prevalence).
+\vspace{0.5em}\newline
+The architecture for the system was a three-layer model. 
+Communcation went from the Menu (Windows Form; GUI) to a Controller class\footnote{
+	The Controller class mainly handled adding, deleting, updating, retrieving and searching for data provided by the user.
+}. 
+In the Controller class, data was checked/verified before being saved to file. 
+If there were any errors, error messages were to be sent back to the user. 
+\vspace{0.5em}\newline
+The specific entity classes was persistent, but not the control - and limit classes.
+Attributes marked with ID by users were to be identified for unique for each object that were stored.
+\vspace{0.5em}\newline
+There were also two notable differences that had to be taken into account with db40 and Prevayler.
+When persistence was secured with db40, the SortedList containing the properties was unnecessary and therefore not included. 
+When using search (find-methods), the search had to be made directly in the object database.
+With Prevayler the search had to happen in the real estate list since it does not have an object database.
 
 \subsection{Bachelor Thesis: CleanMyFolder}
 \label{sec:bach_thesis}
@@ -39,24 +75,28 @@ This was developed using Visual Studio as IDE and C\# as programming language.
 	\item \getprefix{level}: \getprefix{bach}
 	\item \getprefix{college}: \getprefix{buc}
 	\item \getprefix{course}: \getprefix{inf350}
+	\item \getprefix{ide}: \getprefix{csharp} 2010, UMLet\footnote{\url{http://www.umlet.com/}} (to create UML diagram), 
+	PSPad (creating HTML help files),  Microsoft HTML Help Workshop (for compiling help files)
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%23/Bachelor%20thesis}
 \end{itemize} 
-% space for readability
-% TODO: Re-view and re-write this
-Tools used: Visual Studio 2010, C\#. UMLet to create the UML diagram. 
-The HTML files for the help was written using PSPad, and compiled with Microsoft HTML Help Workshop. Windows OS only.
+For selecting a Bachelor thesis, we had two options. 
+The first was to do research and conduct a scientific study. 
+The second was to develop a system based on a given problem/situation (the option I selected).
+My thesis was based on the following problem: "I want more space on the harddisk - which files do I delete?" 
 \vspace{0.5em}\newline
-The thesis was based on the following problem: "I want more space on the harddisk - which files do I delete?" 
-The main focus in this thesis was the development of a file management system that could scan the computer for folder and files at a given location, 
-and search for duplicates (including zip-files).
+The delivered system was a file management system which could scan the computer for files and folders at a given location, and then list them in separate views. 
+It was also planned to include the possibility to scan for identical duplicates and check for duplicates based in zip-files, but this was not included due to time-restraints.
 \vspace{0.5em}\newline
-Due to complexity with the ZIP-library in C\#, and time restraints the zip-file and duplicate search was excluded 
-(the idea was to look for folders/files that were exact duplicates, and replace these with a shortcut to the folder/file of the users selection). 
-The finished system has the ability to search the whole hard drive or a given path, which then lists the folder(s) and file(s) based on set criterias (file type, size, date). 
+A user may not be interested in small files, or perhaps files that were created as early as last week. 
+Therefore the menu for initializing a scan includes several filtering options (include subfolders, file type, size and date).
+When a scan was completed, the user would be presented with the results, where the folders were listed in a TreeView and files in a DataGridView (presuming there were any results).
+The structure in the TreeView listed the parent folder (path selected) as the root, where every subfolder (and their subfolders) were listed as a child of that parent folder.
+When selecting a given folder, all the files in that folder was listed in the DataGridView (file name and - type, size, date created/modified/accessed).
 \vspace{0.5em}\newline
-The folder(s) are listed in a TreeView, and the files in a DataGridview. 
-By right clicking a folder, the user could opt to search the given folder using the same scan criterias, or open the location in Windows Explorer. 
-The user also has the ability to move or delete a given folder or a selection of files.
+In addition to getting a listing of folder(s) and file(s), the user could open, move or delete the selected folder/file(s). 
+For deletion, there were two options; move to recycle bin, or delete permanently. 
+However, if a filtered scan was ran, the folder deletion options was disabled. 
+This was done to avoid the deletion of a non-empty folder (e.g. only textfiles were listed, but it also contained PDF-documents).
 
 \subsection[Computer Graphics]{\getprefix{ite1605}}
 \label{sec:comp_grahphics}
@@ -67,58 +107,72 @@ The user also has the ability to move or delete a given folder or a selection of
 	\item \getprefix{progLang}: \getprefix{xna}
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/XNA/Datamaskingrafikk}
 \end{itemize} 
-% space for readability
-% TODO: Re-view and re-write this
-Course using Visual Studio C\# and XNA to create games and simulations. 
-Assignments consisted of drawing a 3D-cube and a spinning 3D-ball using lines, matrices and the XYZ. 
-There was also a task to create a representation of the planetary system (I didn't manage to properly complete that assignment), and also the use of particle effects and lighting/shaders. 
-In the graded programming assignment I delivered a game based on the 3D-models developed in the 3D-modeling course. 
+The goal of this course was to get an understanding on how computer graphics worked both in simulations and game development.
+There were a total of five programming assignments, were the last one was part of the course grade.
+The first two assignments were based on understanding the use of the XYZ-system, by using matrices and lines to draw a 3D-Cube and a spinning 3D-ball.
+The fourth assignment included use of particle effects and lighting/shaders.
+\vspace{0.5em}\newline
+In the third assignment, the task was to create a simulation of our solar system (this I did not manage to complete properly).
+The sun should be in the middle (and be the largest object), with the planets rotating around the sun (in addition to its own axis). 
+The planets should also have moons with them, but the sizes and distances could be approximations (but one should attempt to make this as realistic as possible).
 
 \subsubsection{Graded Assignment: Car game}
 \label{sec:comp_grahphics_graded_assignment}
-% TODO: Re-view and re-write this
-The game was a simplistic car game, where you drove a car around in a "stadium", music could be turned on/off, 
-and you got points for hitting the flags that was placed in static locations inside the stadium.
+The graded assignment was a topic of our own choosing, but it required that we implemented at least one element of all the topics taught in this course.
+I chose to develop a car game, where I used the 3D-models I had developed in the 3D-modelling course (described in Section \ref{sec:ite1606_3d_modelling}).
+This was a very simplistic game, where all the player could do was drive around in a "stadium" to gather flags (which gave the player points; static position).
+The flags gave the player points, but the score was not stored, and was reset when starting a new game.
+The player could not drive out of the stadium, nor could the player destroy or crash the car. 
+\vspace{0.5em}\newline
+The game included music and sounds (e.g. screeching sound when breaking), which could be turned on/off (three different background musics were available).
+The camera followed the car, but the player could swap with camera being behind the car or in front (front-view look). 
+The particle effects were present as exhaust from the car, and by using gears, the player could adjust the speed (1-4, and reverse).
 \vspace{0.5em}\newline
 \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/XNA/Datamaskingrafikk/Karaktergivende%20oppgave}
 
 \subsection{Model Train registration}
 \label{sec:model_train}
-\getprefix{type}: \getprefix{priv} \\
+\getprefix{type}: \getprefix{priv} \\	
+\getprefix{progLang}: \getprefix{java}\footnote{
+	The project was originally developed using Java, but he was unable to make it run. \\
+	It was therefore re-written using C\#.
+}, \getprefix{csharp}. 
+\vspace{0.5em}\newline
+One of my friends interests was model trains. 
+As he started to get a larger collection, he wanted to get a better overview of what he owned, and also the possibility to create a simple wishlist to give to friends and family.
+\vspace{0.5em}\newline
+He wanted a separation between whether the model he registered was a train, a wagon or an accessory.
+Trains and wagons had nearly the same specifications, but accessories had a wider group, as these could be railroads, trees, figurines, houses, etc.
+Since he could own more than one wagon, instead of re-registering an existing wagon, he wanted to just update the amount of wagons owned.
+When creating a wishlist, he wanted to be able to save it to a textfile for printing.
+The wishlist should contain the models number/ID, name, sales location and price. 
+\vspace{0.5em}\newline
+The finalised version ensured persistence by using Prevayler (Bamboo.Prevalence), which takes snapshots of the current state of the program, its objects and data.
+With Prevayler, he had no need to install any excess programs, and if there was a lot of useless data stored, it could easily be removed by deleting the existing file(s).
+In addition to desired requirements, the program also included the ability to search for models (based on number/ID, name or type). 
+To ensure that models could be easily updated when listing registered models, these were presented in an editable DataGridView.
+\vspace{0.5em}\newline
 \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%23/ModellTog}
-% NEWLINE
-% TODO: Re-view and re-write this
-This was a program I developed for one of my friends. 
-He had a thing for model trains, and wanted a program that gave him the ability to register trains, wagons, accessories and create a wish list.
-\vspace{0.5em}\newline
-Trains and wagons had almost the same specifications, so for these the same GUI controllers were used. 
-The accessories had other specifications, as these could be railroads, trees, figurines, houses, etc.
-\vspace{0.5em}\newline
-For the wish list, he could register the model number, name, sales location and price. 
-The program was originally developed in Java, but he had issues with running the program. 
-It was therefore later re-written using Visual Studio and C\#.
 
 \subsection{Multipurpose editor}
 \label{sec:multipurpose}
 % space for readability
 \begin{itemize} 
 	\item \getprefix{type}: \getprefix{priv}
-	\item \getprefix{ide}: \getprefix{langName}
+	\item \getprefix{ide}: \getprefix{csharp}, ODBC (for MySQL)
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/C%23/MultiPurpose}
 \end{itemize} 
-% space for readability
-% TODO: Re-view and re-write this
-At the time, I often experienced MySQL Workbench being slow at start-up, and sometimes I wanted to just a quick peek at the tables or data in the database. 
-Creating Readme's for programs and systems developed could also be slightly time-consuming, so I created this simple program I named "MultiPurpose".
-\vspace{0.5em}\newline
-The program was written in C\#, and used ODBC to connect to MySQL. This program had three functionalities:
+At the time (2011-12), I often experienced MySQL Workbench being slow at start-up, and sometimes I wanted to just a quick peek at the tables or data in the database. 
+Creating Readme's for programs and systems could also be slightly time-consuming, so I created this simple program I named "MultiPurpose". 
+This program had three functionalities:
 \begin{enumerate}
 	\item Text Generator: When creating experience level requirements for games, setting these values can be quite time-consuming. 
-	The same can be said if you are testing a lot of "random" links with a set incremental numeric value. 
+	The same can be said if you are testing a lot of "random" links with a set incremental numeric value. 
 	Here one can enter a start/end text, and append numbers (min, max, step). 
-	If one's testing links, you can select which browser to open the link in (converted to links if text contained 'http:/').
-	\item ReadMe generator which saved the text you entered to a text file. 
-	Options included overwriting existing file, adding asterics and version number into the text.
-	\item 3. Connecting to, and displaying information from a MySQL database, after the user had entered a username, password and host/port. 
-	Gives the ability to select a database, select a table, and run some queries against the database.
+	If you are testing links, you can select which browser to open the link in (converted to links if the text contained 'http:/').
+	\item ReadMe Generator: Saved the text you entered to a text file. 
+	Options include overwriting existing file, adding asterics, and adding version number into the text.
+	\item MySQL Display: Establish a connection to a MySQL user account. 
+	After entering valid username, password and host/port, you could display the information available for the given users database(s).
+	You could select a database, select a table, and run some queries against the selected database.
 \end{enumerate}

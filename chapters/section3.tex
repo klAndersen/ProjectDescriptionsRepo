@@ -20,6 +20,74 @@ The first assignment was mainly focusing on creating a menu-program that could e
 The second was based on creating a cinema ticket system, which should only register one performance, sales data and vacant sales, etc, which was stored in a text file. 
 If a new performance was registered, the old was deleted. 
 The third was based on Bitmap pixel colour manipulation, where one should be able to alter the colour of all pixels or grey-scaling them all.
+\vspace{0.5em}\newline
+% TODO: Taken from the original task description
+It should be written a C ++ console application that solves the following tasks / problems / challenges:
+---
+1. Calculate bullet volume.
+2. Resolves an other quadratic equation.
+3. Distance between geographical points.
+4. Annuity.
+5. Numbers text (not required, but is recommended to try out).
+---
+Elaboration / Tips: \\
+Menypkt 1: User state radius and the program calculates (and prints) the volume.
+Menypkt 2: User state value for a, b and c and the program solves the equation.
+Menypkt 3: The program will calculate the distance between two geographical points on the earth's surface. 
+Tip: Haver Its Formula.
+Menypkt 4: the program should bere gene and print a repayment plan for an annuity loan. 
+User provides home loans, interest rates (in \%) and the number of years (seen one installment = a year) for repayment. 
+The program will calculate and print a repayment plan for the loan. 
+If the loan is for \$ 200,000, -, rate = 3.6\% and the number of years / installments = 12.
+Menypkt 5: The user enters an integer program should write this as text (ex .: 31 = thirty, 1132 = EtTusenEtHundreOgTrettiTo). 
+Should at least cover figures from 0-1000.
+\vspace{0.5em}\newline
+% TODO: Taken from the original task description
+It will develop a simple system that will be used to sell tickets for showtimes.
+To make things simple it is only possible to manage a cinema show time.
+The program will be menu driven and will be used by the person who sells tickets for theater performance.
+---
+Basically, all the seats marked as vacant by means. drawn '*'.
+The hall can be represented by means. a two-dimensional table. Sold seat marked with the character '\#'.
+Information about the seats that are vacant and sold should also be saved to a file.
+It operated with two prices: full price (eg. £90) and reduced prices (eg. £60).
+The menu will look something like this:
+---
+Actual performance:?
+1. New performance
+2. Buy Tickets
+3. Show vacant seats
+4. Display ticket sales for this performance
+0. End
+---
+The "New performance" gives the user the opportunity to make clear to the new show at the table (and file) that holds the free / sold seats "reset" - ie all seats marked as vacant. 
+Here you can Also ask for the names of performances that in turn leads to the emergence of a name behind "Current Show: "in the menu above.
+The "Buy Tickets" allows the user to select the desired row and column. 
+Price (1 of 2) must also recorded. 
+Then the program asks for confirmation of the purchase. 
+Selected seats marked as busy.
+---
+If the program terminates and is restarted, all information registered remembered. 
+This means cinema-status is stored in a file. This "reset" through menu options 1.
+Option 3 "Show free seats" to print the saddle as shown above so that the user sees what is free and can recommend sites to buyers.
+Option 4 will show the number of tickets sold per day, income per row and total income on current performance.
+\vspace{0.5em}\newline
+% TODO: Taken from the original task description
+Work through the document "Case: Bitmap" that is placed under uke16. 
+Create your own 24-bit BMP / DIB file that you are testing with.
+---
+Once you've got the code, which is reviewed here to work as expected, expand the program with the following:
+Add function makes it possible to change one of the colors of all the pixels. 
+Function should be made to change in an arbitrary color component (R, G or B) can be set to any color. 
+---
+Function prototype should look like this:
+	void change color (vector <Pixel> \& pixel table, int component, int color) // component: 0 = R 1 = G 2 = B
+---
+Add a feature that makes the pixels in the image into grayscale following algorithm: 
+For each pixel calculate an average value of r, g and b values. Then put the pixel r = g = b = average value. 
+---
+Function prototype should look like this:
+	void greyscale (vector <Pixel> \& pixel table)
 
 \subsubsection{Graded assignment: recipeProgram} %TODO: Find name of program
 \label{sec:recipe_program}
@@ -29,6 +97,35 @@ The third was based on Bitmap pixel colour manipulation, where one should be abl
 The graded assignment consisted of creating a system that could store recipes, calculate a recipes nutrition data, list the data for a given nutrition, 
 list recipes containing more than X nutritions, etc. 
 The nutrition data was extracted from an Excel-file provided by the teacher.
+\vspace{0.5em}\newline
+% TODO: Taken from the original task description
+Task Description \\
+You have been commissioned by Chef S. Jeffsen on top Høgfjellshotel to create a program as he helps to keep track of nutritional information related to meals that he composes. 
+Using the program it will be possible to compose dishes and get calculated corresponding nutrition information as energy in kcal (and / or Joule) and the content of proteins,
+fat, carbohydrates, vitamins, etc.
+---
+To achieve this we need to have access to nutrition information on foods.
+Here is a table in Excel format with nutritional values for more enn1300 goods where the amount stated as content per 100 grams of edible product.
+The program must have this information available to compose dishes.
+Chef envisions that he chooses x grams of vare1, y grams of vare2, z grams of vare3 etc. to compose a dish and then (or continuously) get printed total nutrient for the new court. 
+The finished dish should be written to a recipe file (a separate file per dish). 
+The recipe contains quantity (in grams) for each food and overall nutrition information (amount of protein). 
+Food is selected by means of food number, ie. the user enters a food number (see table) to select a food item. 
+The program will be menu driven and able to read and use information from an adjusted file (see separate section below).
+---
+Report \\
+It should be possible to extract "reports" from the system ie. information that is written to screen. 
+The following shall be possible to retrieve the system:
+- All registered dishes / recipes listed on the screen.
+- Dishes with more than x (determined by user) g protein, fat or carbohydrates per 100g done right.
+- Dishes with more than x (determined by user) calories per 100g finished right.
+- Dishes with lots of vitamin D (compared to the daily recommended intake).
+- Dishes with much vitamin A (in relation to the daily recommended intake).
+- Dishes with much cholesterol (compared to the daily recommended intake).
+- \ldots
+It is expected that you use classes in the solution (but this is not an absolute requirement). 
+Recipes should be stored in a structured way (files) to easily retrieve saved data on next run.
+
 
 \subsection{Machine Learning library}
 \label{sec:ml_library}

@@ -1,12 +1,10 @@
 %\section{section7}
 \label{sec:section7}
 
-Suggestions for sections:
+Suggestions for sections/content:
 \begin{itemize} 
-	\item databases
-	\item udk/unreal
 	\item \getprefix{inf340}
-	\item \getprefix{ite1607}
+	\item \getprefix{ite1607} (udk/unreal)
 	\item \getprefix{imt4006}
 	\item \getprefix{imt4032}
 	\item \getprefix{imt4072}
@@ -35,6 +33,53 @@ and set parameters for the evaluation. 
 The teacher would need to get a statistical overview of students answers, and also be able to export/store these to a file. 
 The tools used were Visual Studio IDE, Visual Basic as programming language (course requirement), and MySQL as database. 
 The GUI was Windows Forms.
+\vspace{0.5em}\newline
+% TODO: Taken from the original task description
+It should be made an application for evaluation of course. 
+The application shall be made with the database in MySQL and application in Visual Basic 2008 (gladly Express version). 
+It is emphasized that the application is neat, clean and robust in use with good online user assistance. 
+It is also emphasized that it is used recognized principles of good code. "Report Designer" should not be used. 
+Programming community's auto with "DataSet" (available in full version of VB) will not be used - it must therefore explicitly created the necessary objects in the program.
+---
+The system should have two main parts:
+1. For teachers:
+a. Management Section where teachers can create questionnaires
+b. report stage where teachers get out statistics about students' answers
+2. For students: Besvarelsesdel where students can fill out the individual forms part of the evaluation
+---
+Information about students and courses are taken electronically from student system, which, inter alia, states which students taking a given course 
+(a "course" is a subject / course that taught a given semester, for example. INF110 V07). 
+The model for this looks like this:
+
+---
+For each evaluation made a number of questions for each question is given two to five answer options that students can choose from. 
+The teacher determines all the details of the evaluation, including which course it applies, what the evaluation will be called, 
+what questions the evaluation should contain and what response options to be granted. 
+The sub-model for this part looks like this:
+---
+The attributes evalDatoUt and evalDatoInn specify the time when the evaluation will be available for students. 
+The teacher should be able to change the questions and answers, but not after the first student has completed the evaluation.
+---
+There may be multiple evaluations for each course, and they may overlap in time:
+---
+Once the student starts the system, he will sign in and be presented with the reviews that are relevant to him. 
+An evaluation is appropriate only if:
+1 student taking the course 
+2. the student does not already have evaluated the course 
+3. current date is within the period from evalDatoUt even evalDatoInn
+---
+When the student has completed the evaluation, he will receive a receipt on the screen. The sub-model for answers, looks like this:
+---
+In the report section teacher should be able to learn how answers were distributed for each question. 
+It should also be possible to know who has completed evaluation (it is mandatory to carry out certain evaluations). 
+There should be an opportunity to "export" the counted data for a specific evaluation to a flat file, which can then be imported into Excel. 
+The teacher should also be able to delete all student responses for an evaluation (when it is finished).
+---
+The database is attached as SQL scripts, with some data. 
+Note in particular the creation of a user "Knut" with password "Tunk". 
+The user uses you when the application will be linked to the database. 
+Feel free to add more data, but you can not modify the database structure, name or the like. 
+You can not save queries (views) in the database for use in the program - but you can create views with the create statements in your program.
 
 \subsection[System Developing Project]{\getprefix{inf165}}
 \label{sec:inf165_sys_dev}
@@ -50,6 +95,26 @@ The GUI was Windows Forms.
 This was a group project in a system development course. 
 The task was to develop a system for hotel management, where the user should be able to check-in/out guests, see available rooms, room expenses and retrieve economical reports.
 The system was created by using Microsoft Access and MySQL as database. Microsoft Visio was used to create DataFlow Diagrams.
+\vspace{0.5em}\newline
+% TODO: Taken from the original task description
+Storenuten Høgfjellshotel is a mountain hotel with excellent location in the Norwegian mountains. 
+For without their own family-friendly resorts have mountain hotel responsibility ramp of 130 km ski slopes in the surrounding areas. 
+It is a short distance to municipal newly established state of the art resorts. 
+Høyfjellshotell has since the 50s evolved from a small family business to now being a major employer in the county with pepole. 
+The hotel is newly renovated and has all the rights. 
+---
+The hotel has 130 modern double rooms and 35 family rooms with 4 beds with the possibility of an extra bed. 
+When it comes to stay in double or family so include award full board (breakfast, lunch and dinner). 
+The price is per date 1020 kr for an adult per day, and it is half price for children under 16 years. 
+Beverages for lunch and dinner are not included. 
+The hotel follows common practice to "write expenditure Room" (the guest acknowledges the talon inflicted room number), 
+ie the settlement of drinks to food, something good from the bar, mini bar, etc. may be by settlement / out.
+---
+After market entry of the ski resort has mountain hotel experienced strong growth in its business.
+They now have an urgent need for a new order and stay system for hotel operations. 
+On the ground it is important that the new system handles the work of managing orders, check in and stay ( "expenses are recognized in the room during the stay") and Settlement / out.
+---
+On the basis of the information at any time in the system will be possible to take out information of a financial nature.
 
 \subsection[Flash Programming]{\getprefix{inf330}}
 \label{sec:flash_prog}

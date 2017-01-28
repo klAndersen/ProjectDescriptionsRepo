@@ -28,6 +28,46 @@ Aside from handling administrative tasks (I was the Scrum Master in this project
 the answers submitted by the students and and grade for the submitted questionnaires (with confidence level). 
 In the second task, I worked on the part related to difficulty level and updating of the students score.
 During this project, I used Arch Linux as OS, PyCharm as IDE and Python as programming language.
+\vspace{0.5em}\newline
+% TODO: Taken from the original task description
+Project background
+OpenEdX is a community driven, open, open-source development and delivery platform for online courses and MOOCs. 
+The codebase is hosted on GitHub under the edx-platform repository, and managed by the EdX consortium.  
+There is a native Android client and iOS app codebase hosted on GitHub too. 
+The project offers comprehensive learning management system tools and authoring for lecturers, allows uploading the lecture videos, lecture slides, 
+audio and preparing written course material in a form of handouts. 
+There is a number of built-in modules for various in-class tasks.
+---
+Project goals
+The goals of the project are three-fold:
+1. to understand and gain in-depth knowledge about the platform, architecture, and organization of the existing codebase
+2. to understand the process, requirements, and compliance when contributing to a (large) open source project
+3. to be able to contribute to an open-source project
+---
+Task 1
+Multi-choice questionnaire with confidence level attached to each individual questions that changes the marking of that question. 
+We will follow a 3-levels-of-confidence model, in which the following is the scoring matrix for appropriate confidence levels 
+(the "+1" means: "student gets 1 point for correctly answering this question"):
+---
+
+confidence	| correct answer 	| wrong answer
+0 - low		| +1				| 0
+1 - normal	| +1.5				| -0.5
+2 - high	| +2				| -1
+---
+Task 2
+Short-answer or multi choice questionnaire that allows students to annotate questions with two values: 
+"for all students in this class, this question is harder then average" or "easier than average". 
+This should allow the students to reflect on the knowledge of their peers and to judge the level of confidence of their peers. 
+This point can be extended by calculating the scores for people that got more of the annotation correct as calculated against the actual test results 
+for this particular question in this test. 
+---
+Task 3
+A plugin for the video player that allows students to select and mark sections of the video with "Thumbs up" and "Thumbs down" or in other words 
+"these bits were extremely valuable" and "these bits could be skipped". 
+I expect viewers doing it only for extreme cases, in which situation you could have the Hall of Fame for the most "disliked" video lecture sequences, 
+and the most "liked" ones. One could splice the most interesting lecture bits from a single topic into the "super lecture" summary of the course 
+(this feature is optional, for the more driven teams).
 
 \subsection[Advanced Project Work]{\getprefix{imt5251}}
 \label{sec:adv_proj_work}

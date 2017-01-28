@@ -1,6 +1,8 @@
 %\section{section6}
 \label{sec:section6}
 
+% TODO: update all sections to match bulletpoint list template!
+
 \subsection{Alumni Community}
 \label{sec:alumni}
 % space for readability
@@ -8,19 +10,16 @@
 	\item \getprefix{level}: \getprefix{bach}
 	\item \getprefix{type}: \getprefix{ass}
 	\item \getprefix{college}: \getprefix{buc}
-	\item \getprefix{course}: \getprefix{courseCode}
-	\item \getprefix{ide}: \getprefix{ideName}
-	\item \getprefix{progLang}: \getprefix{langName}
+	\item \getprefix{course}: \getprefix{inf268}
+	\item \getprefix{ide}: \getprefix{pspad}, \getprefix{xampp}, \getprefix{mysqlw}
+	\item \getprefix{progLang}: \getprefix{html}, \getprefix{css}, \getprefix{php}, \getprefix{js}
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/Web%20Development/Inf%20268%20Utviklingsprosjekt}
 \end{itemize} 
 % space for readability
 This was a course that focused mainly on development for Web. 
 In this course, everything was developed from scratch, without use of external frameworks or libraries. 
-The goal was to develop an alumni community web page for the college. 
-A requirement was that the delivered solution should include HTML, CSS3, JavaScript and PHP. 
-For storing data, MySQL was selected as database. 
-To have a local server running, Apache XAMPP was used. 
-It was also a requirement that the pages should look as identical as possible regardless of the web browser that was used 
+The goal was to develop an Alumni community web page for the college. 
+A requirement was that the pages should look as identical as possible regardless of the web browser that was used 
 (I compared Chrome, Internet Explorer, Opera and Firefox).
 \vspace{0.5em}\newline
 The course was split into two semesters, and the development project into five parts:
@@ -33,7 +32,7 @@ The course was split into two semesters, and the development project into five p
 \end{enumerate}
 % space for readability
 The users were divided into the following user groups; registered, moderator and administrator. 
-Adminstrators was able to appoint new moderators and edit users, with the same rights as moderators.
+Adminstrators was able to appoint new moderators and edit users, in addition to having the same rights as moderators.
 \vspace{0.5em}\newline	
 All registered users should be able to\ldots
 \begin{itemize}
@@ -43,6 +42,7 @@ All registered users should be able to\ldots
 	\item \ldots see a list of the other registered users.
 \end{itemize}
 % space for readability
+\newpage\noindent
 Moderators should be able to\ldots
 \begin{itemize}
 	\item \ldots edit users profile (e.g. if inappropriate data was entered on their profile).
@@ -83,9 +83,9 @@ Events that were out of date was not showed, and this was also true for future e
 	\item \getprefix{level}: \getprefix{bach}
 	\item \getprefix{type}: \getprefix{ass}
 	\item \getprefix{college}: \getprefix{buc}
-	\item \getprefix{course}: \getprefix{courseCode}
-	\item \getprefix{ide}: \getprefix{ideName}
-	\item \getprefix{progLang}: \getprefix{langName}
+	\item \getprefix{course}: \getprefix{inf329}
+	\item \getprefix{ide}: \getprefix{xmled}
+	\item \getprefix{progLang}: \getprefix{xml}, \getprefix{xsd}, \getprefix{xslt}, \getprefix{php}, \getprefix{css}
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/Web%20Development/Inf%20329%20XML%20-%20Oblig.%20oppg}
 \end{itemize} 
 % space for readability
@@ -110,8 +110,8 @@ It was also a requirement to create at least four different web-pages to show ho
 	\item \getprefix{level}: \getprefix{master}
 	\item \getprefix{type}: \getprefix{group}, \getprefix{ass}
 	\item \getprefix{college}: \getprefix{ntnu}
-	\item \getprefix{ide}: \getprefix{ideName}
-	\item \getprefix{progLang}: \getprefix{langName}
+	\item \getprefix{ide}: NetBeans, \getprefix{mysqlw}
+	\item \getprefix{progLang}: \getprefix{jserv}
 \end{itemize} 
 % space for readability
 In this course, our group worked on developing an A/B Test system. 
@@ -134,12 +134,12 @@ Since we used Model-View-Controller (MVC), some of the programming I did was rel
 	\item \getprefix{level}: \getprefix{master}
 	\item \getprefix{type}: \getprefix{ass}
 	\item \getprefix{college}: \getprefix{ntnu}
-	\item \getprefix{ide}: \getprefix{ideName}
-	\item \getprefix{progLang}: \getprefix{langName}
+	\item \getprefix{ide}: \getprefix{unity}, \getprefix{nppp}, \getprefix{mysqlw}, d3.js\footnote{\url{https://d3js.org/}}
+	\item \getprefix{progLang}: \getprefix{html}5, \getprefix{css}, \getprefix{php}, \getprefix{js}
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT4004-Integration-Project}
 \end{itemize} 
 % space for readability
-The original plan for this project was to create a 3D-simulation game that incorporated Darwins theory of evolution. 
+The original plan for this project was to create a 3D-simulation game that incorporated Darwins theory of evolution (using Unity). 
 The goal was to try helping students taking Machine Learning courses to learn an algorithm called "Genetic Algorithms". 
 However, due to time restraints and complexity, this was changed and reduced to an unfinished web-page version (aimed at teaching Genetic Programming).
 \vspace{0.5em}\newline
@@ -152,7 +152,3 @@ After submission, the given game would no longer be playable.
 The only game-element that was implemented was a LISP (reverse polish notation) game. 
 The student was presented with an equation (e.g. 1 + (2 * 3) + (10 *10) + 30) and asked to write the LISP version of this. 
 In addition, the student could see their answer represented as a tree-diagram (achieved by converting the input to a JSON-object, and passing it to the d3.js library).
-\vspace{0.5em}\newline
-The project was developed by using HTML5 and PHP, and included a data-visualization library called d3.js. 
-D3.js was only used for creating the LISP tree, which was optional when the student were checking their answer. 
-The data was stored in a MySQL database.

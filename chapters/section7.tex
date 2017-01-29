@@ -1,18 +1,19 @@
 %\section{section7}
 \label{sec:section7}
 
+\begin{comment}
 Suggestions for sections/content:
 \begin{itemize} 
-	\item \getprefix{inf340}
-	\item \getprefix{ite1607} (udk/unreal)
-	\item \getprefix{imt4006}
-	\item \getprefix{imt4032}
-	\item \getprefix{imt4072}
-	\item \getprefix{imt4122}
-	\item \getprefix{imt4612}: assignments
-	\item anything else\ldots?
-\end{itemize} 
-
+\item \getprefix{inf340}
+\item \getprefix{ite1607} (udk/unreal)
+\item \getprefix{imt4006}
+\item \getprefix{imt4032}
+\item \getprefix{imt4072}
+\item \getprefix{imt4122}
+\item \getprefix{imt4612}: assignments
+\item anything else\ldots?
+\end{itemize}
+\end{comment}
 
 \subsection{Teacher-Student questionnaire system}
 \label{sec:inf116_teacher_system}
@@ -26,60 +27,30 @@ Suggestions for sections/content:
 	\item \getprefix{progLang}: \getprefix{vb}
 \end{itemize} 
 % space for readability
-% TODO: Re-view and re-write this
-A two-part group project, where the first part was the teacher system and the second the system for the students.
-I was part of the group working with the teacher system (we were 3 people working on this), where the system should be able to create new questions for a given course, 
-and set parameters for the evaluation. 
-The teacher would need to get a statistical overview of students answers, and also be able to export/store these to a file. 
-The tools used were Visual Studio IDE, Visual Basic as programming language (course requirement), and MySQL as database. 
-The GUI was Windows Forms.
+This project was the exam-case in this course, which counted for 60\% of the final course grade. 
+The project was  based on developing an application for course evaluation.
+Included in the exam-case was models of the database, and a SQL script that contained some data, with a set user-account (which were to be used for database connection(s)).
+The system had have two main parts; one for teachers and the other for students. 
+In the teachers part, there was a management section (for questionnaire creation), and a report stage for statistics related to the students answers.
+The part for the students\footnote{
+	We divided our group into two (we were in total six people), where our "half" worked on the teacher part. 
+	Therefore, the main task description for the Student part is omitted from this section.
+} was mainly targeted at giving access only to students taking the course, and giving them the ability to answer and submit the evaluation.
+Student information was retrieved electronically from the student system\footnote{
+	The student system contained data about which student was taking a given course (where "course" is a subject/course taught a given semester; e.g. INF110 S07).
+	Retrieving student data from the student system was not a part of this project, but just information given in the exam-case description.
+}.
 \vspace{0.5em}\newline
-% TODO: Taken from the original task description
-It should be made an application for evaluation of course. 
-The application shall be made with the database in MySQL and application in Visual Basic 2008 (gladly Express version). 
-It is emphasized that the application is neat, clean and robust in use with good online user assistance. 
-It is also emphasized that it is used recognized principles of good code. "Report Designer" should not be used. 
-Programming community's auto with "DataSet" (available in full version of VB) will not be used - it must therefore explicitly created the necessary objects in the program.
----
-The system should have two main parts:
-1. For teachers:
-a. Management Section where teachers can create questionnaires
-b. report stage where teachers get out statistics about students' answers
-2. For students: Besvarelsesdel where students can fill out the individual forms part of the evaluation
----
-Information about students and courses are taken electronically from student system, which, inter alia, states which students taking a given course 
-(a "course" is a subject / course that taught a given semester, for example. INF110 V07). 
-The model for this looks like this:
-
----
-For each evaluation made a number of questions for each question is given two to five answer options that students can choose from. 
-The teacher determines all the details of the evaluation, including which course it applies, what the evaluation will be called, 
-what questions the evaluation should contain and what response options to be granted. 
-The sub-model for this part looks like this:
----
-The attributes evalDatoUt and evalDatoInn specify the time when the evaluation will be available for students. 
+For each evaluation, a number of questions where made available, where each question should give between two to five answer options.
+It is up to the teacher to determine which details are relevant for a given evaluation (an evaluation includes the course, evaluation name, created questions and answer alternatives).
+There were two dates that needed to be set, evalDateOut and evalDateIn, which specifies the time for when the evaluation was available for students. 
 The teacher should be able to change the questions and answers, but not after the first student has completed the evaluation.
----
-There may be multiple evaluations for each course, and they may overlap in time:
----
-Once the student starts the system, he will sign in and be presented with the reviews that are relevant to him. 
-An evaluation is appropriate only if:
-1 student taking the course 
-2. the student does not already have evaluated the course 
-3. current date is within the period from evalDatoUt even evalDatoInn
----
-When the student has completed the evaluation, he will receive a receipt on the screen. The sub-model for answers, looks like this:
----
-In the report section teacher should be able to learn how answers were distributed for each question. 
-It should also be possible to know who has completed evaluation (it is mandatory to carry out certain evaluations). 
-There should be an opportunity to "export" the counted data for a specific evaluation to a flat file, which can then be imported into Excel. 
+A course can have multiple evaluations, and this may overlap in time. 
+\vspace{0.5em}\newline
+For the report section, the teacher should be able to see answer distribution for each question. 
+It should also be possible to know who has completed the evaluation (since some evaluations could be mandatory).
+There should be an opportunity to "export" the counted data for a specific evaluation to a flat file, which then could be imported into Excel. 
 The teacher should also be able to delete all student responses for an evaluation (when it is finished).
----
-The database is attached as SQL scripts, with some data. 
-Note in particular the creation of a user "Knut" with password "Tunk". 
-The user uses you when the application will be linked to the database. 
-Feel free to add more data, but you can not modify the database structure, name or the like. 
-You can not save queries (views) in the database for use in the program - but you can create views with the create statements in your program.
 
 \subsection[Hotel management system]{\getprefix{inf165}: Hotel management system}
 \label{sec:inf165_sys_dev}
@@ -120,7 +91,6 @@ On the basis of the information at any time in the system will be possible to ta
 
 \subsubsection{Space Invaders}
 \label{sec:space_invaders}
-% TODO: Re-view and re-write this
 A scroll-game like space invaders, where the player controls a space-ship. 
 The topic for the development was chosen by the group. 
 A short scenario context is that the player is a farmer kidnapped by aliens, and have to save the Earth (and his harvest).
@@ -133,7 +103,6 @@ The game also contained a "Top 10" list displaying the scores for the players.
 
 \subsubsection{Tower of Knowlegde}
 \label{sec:tower_of_knowledge}
-% TODO: Re-view and re-write this
 Tower defence game meets quiz where the goal is to attack only the wrong answers. 
 The topic was selected by the group. 
 The player can put out none or more towers, and the player had to let the "correct" answer only pass.

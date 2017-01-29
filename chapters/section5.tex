@@ -8,66 +8,51 @@
 	\item \getprefix{level}: \getprefix{master}
 	\item \getprefix{type}: \getprefix{group}, \getprefix{ass}
 	\item \getprefix{college}: \getprefix{ntnu}
-	\item \getprefix{ide}: \getprefix{pycharm}, \getprefix{al}
-	\item \getprefix{progLang}: \getprefix{py}
+	\item \getprefix{ide}: \getprefix{pycharm}, \getprefix{al}, VirtualBox, OpenEdX\footnote{\url{https://open.edx.org/}}, XBlocks\footnote{\url{https://open.edx.org/xblocks}}, 
+	\getprefix{git}, \getprefix{gith}, Scrum
+	\item \getprefix{progLang}: \getprefix{py}, \getprefix{html}, \getprefix{js}
 \end{itemize} 
 % space for readability
-% TODO: Re-view and re-write this
-Group project course where the goal was to teach us how it was to work in a global team not having all members around, and also working on expanding an existing system. 
-The task my group was given was to develop a multi-choice questionnaire plugin for the Learning Management System (LMS) Open edx. 
-\vspace{0.5em}\newline
-Aside from creating the pages and functionality for creating, editing and displaying a questionnaire, we were given three tasks 
-(the third was never started, and thus is excluded from this summary). 
-In this questionnaire, students should be able to select their confidence level in regards to their submitted answers. 
-Depending on the confidence level selected (0 = low, 1 = normal, 2 = high), their total score could be increased (or decreased if wrong answer was selected).
-\vspace{0.5em}\newline
-The second task was peer-review, where the students could select whether or not they thought the rest of the class found this to be a difficult question. 
-Bonus points were then given to the students who selected the one that got the most selections.
-\vspace{0.5em}\newline
-Aside from handling administrative tasks (I was the Scrum Master in this project), the parts I worked on was the creation of answer alternatives, 
-the answers submitted by the students and and grade for the submitted questionnaires (with confidence level). 
-In the second task, I worked on the part related to difficulty level and updating of the students score.
-During this project, I used Arch Linux as OS, PyCharm as IDE and Python as programming language.
-\vspace{0.5em}\newline
-% TODO: Taken from the original task description
-Project background
+\paragraph{Project background} ~\\
 OpenEdX is a community driven, open, open-source development and delivery platform for online courses and MOOCs. 
 The codebase is hosted on GitHub under the edx-platform repository, and managed by the EdX consortium.  
 There is a native Android client and iOS app codebase hosted on GitHub too. 
 The project offers comprehensive learning management system tools and authoring for lecturers, allows uploading the lecture videos, lecture slides, 
 audio and preparing written course material in a form of handouts. 
 There is a number of built-in modules for various in-class tasks.
----
-Project goals
+
+\paragraph{Project goals} ~\\
 The goals of the project are three-fold:
-1. to understand and gain in-depth knowledge about the platform, architecture, and organization of the existing codebase
-2. to understand the process, requirements, and compliance when contributing to a (large) open source project
-3. to be able to contribute to an open-source project
----
-Task 1
+\begin{enumerate}
+	\item to understand and gain in-depth knowledge about the platform, architecture, and organization of the existing codebase
+	\item to understand the process, requirements, and compliance when contributing to a (large) open source project
+	\item to be able to contribute to an open-source project
+\end{enumerate}
+
+\paragraph{Task 1} ~\\
 Multi-choice questionnaire with confidence level attached to each individual questions that changes the marking of that question. 
 We will follow a 3-levels-of-confidence model, in which the following is the scoring matrix for appropriate confidence levels 
 (the "+1" means: "student gets 1 point for correctly answering this question"):
----
+% table listing the confidence level with scores based on correct/wrong answer
+\begin{center}
+	\begin{tabular}{ | l | l | l | p{5cm} |} \hline 		
+		confidence 	& correct answer 	& wrong answer  \\ \hline
+		0 - low 	& +1 				& 0  			\\ \hline
+		1 - normal 	& +1.5 				& -0.5  		\\ \hline
+		2 - high 	& +2 				& -1  			\\ \hline
+	\end{tabular}
+\end{center}
+% space for readability
+In this task, the parts I worked on was the creation of answer alternatives, the answers submitted by the students and and grade for the submitted questionnaires (with confidence level).
 
-confidence	| correct answer 	| wrong answer
-0 - low		| +1				| 0
-1 - normal	| +1.5				| -0.5
-2 - high	| +2				| -1
----
-Task 2
+\paragraph{Task 2} ~\\
 Short-answer or multi choice questionnaire that allows students to annotate questions with two values: 
 "for all students in this class, this question is harder then average" or "easier than average". 
 This should allow the students to reflect on the knowledge of their peers and to judge the level of confidence of their peers. 
 This point can be extended by calculating the scores for people that got more of the annotation correct as calculated against the actual test results 
-for this particular question in this test. 
----
-Task 3
-A plugin for the video player that allows students to select and mark sections of the video with "Thumbs up" and "Thumbs down" or in other words 
-"these bits were extremely valuable" and "these bits could be skipped". 
-I expect viewers doing it only for extreme cases, in which situation you could have the Hall of Fame for the most "disliked" video lecture sequences, 
-and the most "liked" ones. One could splice the most interesting lecture bits from a single topic into the "super lecture" summary of the course 
-(this feature is optional, for the more driven teams).
+for this particular question in this test.
+\vspace{0.5em}\newline
+Here I worked on the part related to difficulty level, and updating the students score.
 
 \subsection[Advanced Project Work]{\getprefix{imt5251}}
 \label{sec:adv_proj_work}
@@ -75,8 +60,9 @@ and the most "liked" ones. One could splice the most interesting lecture bits fr
 \begin{itemize} 
 	\item \getprefix{level}: \getprefix{master}
 	\item \getprefix{college}: \getprefix{ntnu}
-	\item \getprefix{ide}: \getprefix{pycharm}, \getprefix{al}
-	\item \getprefix{progLang}: \getprefix{py}
+	\item \getprefix{ide}: \getprefix{pycharm}, \getprefix{mysqlw}, \getprefix{al}, \getprefix{git}, \getprefix{gith}, 
+	Py-StackExchange\footnote{\url{https://github.com/lucjon/Py-StackExchange}}
+	\item \getprefix{progLang}: \getprefix{py2}, \getprefix{html}, Django, XBlocks
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT5251_AdvProjWork}
 \end{itemize} 
 % space for readability
@@ -98,7 +84,7 @@ The plan for further development was to implement AI in my Master thesis using a
 	\item \getprefix{level}: \getprefix{master}
 	\item \getprefix{college}: \getprefix{ntnu}
 	\item \getprefix{course}: \getprefix{imt4904}
-	\item \getprefix{ide}: \getprefix{pycharm}, \getprefix{al}
+	\item \getprefix{ide}: \getprefix{pycharm}, \getprefix{mysqlw}, \getprefix{al}, \getprefix{git}, \getprefix{gith}
 	\item \getprefix{progLang}: \getprefix{py2}, \getprefix{py3} (submitted version)
 	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT4904_MasterThesis_Code}
 \end{itemize} 

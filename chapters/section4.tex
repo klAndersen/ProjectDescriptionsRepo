@@ -45,92 +45,52 @@ The main menu used JFrame, and the child windows used JDialog.
 \end{itemize} 
 % space for readability
 This was an introductory course to developing applications for Android. 
-It consisted of four mandatory assignments and a graded assignment. 
+
+\paragraph{\getprefix{ass} 1} ~\\
+The task was to develop a conversion app for different measure systems (distance, volume, mass, temperature and time).
+When starting the application, the user begins by selecting the measurement category, unit to be converted and then enters the numerical value.
+A requirement included the use of Fragments, since the application should be able to run on devices with small and large screens, and also multilingual (Norwegian and English).
+
+\paragraph{\getprefix{ass} 2} ~\\
+The task was to develop two different applications (application A and application B).
+Application A could be used to manage information about books/book titles, which was stored in a text file. 
+Application A should at least contain:
+\begin{itemize}
+	\item A Start-up activity functioning as a menu to access other activities.
+	\item An Activity that displays a list of all registered titles.
+	The user can then choose a book title and this should then be returned.
+	\item An Activity that registers a new book title, and stores this in the file.
+	\item An Activity that allows deletion of selected book title.
+\end{itemize}
+% space for readability
+The activities created added in application A were then to be used by application B (e.g. title selection (which is returned from A to B), adding new titles, etc.).
+For each new title added, a broadcast is sent from application A, which is to be caught by application B and displayed in a Toast.
+
+\paragraph{\getprefix{ass} 3} ~\\
+The task was to develop two Android applications, one that logs and stores information about various "events" and one that serves as an interface to the log.
 \vspace{0.5em}\newline
-The first assignment was creating a conversion app for different measure systems (distance, volume, mass, temperature and time).
+Application 1: Event Logs \\
+This application could (by using a BroadcastReceiver) capture and store information from system events (e.g. receiving SMS, phone calls, GPS turned on/off, WiFi turned on/off, etc.). 
+Each event had its own category (e.g. Telephony, Network, Positioning, etc.), and stored it in a \getprefix{sqlite} database (which was "exposable" via Content Provider).
+The stored data for all events are date, time, category, text, details (parameters/values associated with the event, e.g. who the SMS came from).
+When the application is started, the user could see a "Setting" activity that allowed the user to decide what events to log.
+When a broadcast occured, the BroadcastReceiver would start and store the relevant information in the database (the application did not have to be started for this to work).
+\clearpage\noindent
+Application 2: LoggerUI \\
+This application displayed the information that was stored in the database by Application 1 (by using ContentResolver).
+The user could then select a category and display all events for the given category.
 
-% TODO: Taken from the original task description
-Within each of the main categories are also included examples of different devices that program to calculate from/to. 
-The user begins by selecting the main category, then select the device to be counted from, unit to be counted and the numerical value to be converted. 
-The program make the conversion and displays the result on the screen.
-To use Fragments and the application will use a different layout on small and large screens. 
-On the big screen should be left of the screen, a list of categories that you can choose from. 
-Right shall as corresponding subcategory to/from ETC. see you later. The program will also be multilingual ie minimum Norwegian and English.
-Examples: 
-If the user selects area as a general category, one can convert from/to devices such as square millimeters, squarecentimeters, squaredecimeters, Square feet, 
-squareinches, square yards, Acres, etc. 
-Selected category Mass shall be converted from/to micrograms, milligrams, centigram, ounces, pounds etc. 
-Selected temperature it should be possible to convert from/to Celsius, Fahrenheit or Kelvin.
+\paragraph{\getprefix{ass} 4} ~\\
+The task was to develop a temperature monitor and notification application for Android, where data was downloaded from a weather website as \getprefix{xml}. 
+The data was downloaded by using a Service (which also handled the \getprefix{xml}-parsing), that started when the device started.
+The service could also be started/stopped through the applications ActionBar, but unless stopped, the service continued running after the application was exited.
+The temperature data was measured by various weather stations, where each weather station have a unique number and name (e.g. '84700', 'Narvik airport'), but they can have the same URL. 
+In addition to extracting the temperature, the weather station data was also needed so that users could select which weather stations they wanted to monitor.
 \vspace{0.5em}\newline
-% TODO: Taken from the original task description
-It will develop an application (A) which can be used to manage information about books/book titles. 
-The program will save the info. on an application associated text file. 
-The application shall be (at least) the following activities (Activity classes):
-* An activity that offers an interface that displays a list of all registered titles. 
-The user can choose a book title and this should then be returned from this activity.
-* An activity that allows you to register a new book title, this is stored on the file.
-* An activity that allows you to delete a selected book title.
-* Start-up activity should have a set of buttons or a menu that provides access to the other activities.
-
-Activities in application A will then be used by another application (B). 
-From this application, the user should make up the list which the activity of A, with titles and could choose and return selected title back to B. 
-Selected title displayed in the application B. In addition, the user could choose to add a new title, using the activity of application A.
-
-Every time it added a new book title sends a broadcast of application A. 
-This should be captured by the application B and displayed by means of a Toast.
-The application B must therefore contain a broadcast receiver, receiving broadcasts from application A.
-Feel free to use Fragments where appropriate.
-\vspace{0.5em}\newline
-% TODO: Taken from the original task description
-The task is to develop two Android applications, one that logs and stores information. about various "events" and one that serves as an interface to the log.
----
-Application 1: Event Logs
-This application is by means of a  BroadcastReceiver to capture and store info from system events such. receiving SMS, phone calls, GPS turned on or off, WiFi turned on or off, etc. 
-All events are stored in a SQLite database.
-Each event should be associated with a category (eg. Telephony, network, positioning and the like, you determine categories and which events will be in the category).
-Each event will be stored with date, time, category, text, details (special parameters / values associated with the event, eg. Who SMS comes from).
-When starting the application, a simple "Setting" activity appears which allows the user to decide which events (of a range of at least 5 different events from at least 
-3 different categories) to be logged.
-The application should also work so that when a kringkasing occurs, the current broadcast receiver start and store relevant information in the database. 
-The application should not be started for it to work. 
-The database must be "exposed" by means. a Content Provider when it will be available for Application 2 - LoggerUI.
----
-Application 2: LoggerUI
-This will use info from database in app1 and display this in a simple Activity. 
-Here user can select the category and display all events from this category (eg. from last night or the like). 
-Here, use a ContentResolver.
-\vspace{0.5em}\newline
-% TODO: Re-view and re-write this
-The fourth assignment was creating a weather notification app. 
-The weather app downloaded XML data from a weather page in set intervals based on settings set by user. 
-The data was then parsed and displayed to user, and the user could set a temperature limit (min/max). 
-If the temperature was out of the set range, a notification should be shown to the user.
----
-% TODO: Taken from the original task description
-It will develop an Android application that will monitor the temperature at different measurement stations used by southwest. 
-A weather station has a unique number and name (eg. 84700, Narvik airport). 
-Of applications shall include a service that periodically downloads weather data (observations) from yr.no and possible. 
-Notify (using. Notification) if the temperature is outside set limits.
-In addition to service shall also contain an application Activity showing a list of measurement stations that the user wants to monitor. 
-Beside the station name will last interrogated temperature displayed. 
-The user must via a menu option to add (and possibly remove) monitor station. 
-A weather station has a name, a measureNo and a URL.
-Different measuring stations can have the same URL.
-
-After the service is started will periodically download temperature data. 
-URL of giving forecasts for Narvik, pick out the temperature of the current station by means of XML parsing.
-The activity shall have the following menu options:
-Adding and deleting measuring stations. 
-A weather station recorded with three values: place names, målernr and URL. 
-Can be stored on file or in a SharedPreference.
-
-Settings
-Here one should be able to set the interval to download weather data (eg. every hour, every two hours, every three hours, etc.).
-In addition, it should be possible to set upper and lower limit temperatures. 
-If downloaded spot temperature is above/below these values, the service should give a notification.
-From the activity should also be possible to start and stop the service (should be visible "actions" in ActionBar'en). 
-The service will continue to run in the background even if the event ends. 
-Make sure the service starts when the device starts.
+In the application, the user could select between getting a list showing monitored weather stations, adding new weather stations for monitoring, and displaying application settings. 
+For the list of monitored stations, the weather station number, name and last monitored temperature was displayed (and also had the possibility to remove selected station(s)).
+In the Settings, users could set download interval (e.g. every hour, every two hours, every three hours, etc.) and temperature range (upper/lower limit).
+After temperature data was downloaded and extracted, if the temperature for any given station was above/below set limit, a notification was given to the user.
 
 \subsubsection{TracknHide}
 \label{sec:tracknhide}
@@ -146,7 +106,8 @@ The position data was retrieved by using the devices GPS, but the amount of posi
 The Java Web server was created using HTML, Java Servlets and JSP, running on Apache TomCat v7.0. 
 It stored the user related information in a MySQL Database, and kept track over all the currently logged in users. 
 The web pages was mainly targeted at an administrator, to give them the ability to view connected users, and disconnect if needed. 
-The server was also the connection point for the users to share/receive position data and notifications via GCM.
+The server was also the connection point for the users to share/receive position data and notifications via GCM. 
+\clearpage\noindent
 \getprefix{ghrepo} \url{https://github.com/klAndersen/Bachelor-development-projects/tree/master/Android/ITE1621%20Applikasjoner%20for%20mobil%20og%20web/Karaktergivende%20oppgave} 
 
 \subsection{TrackMyTeacher}
@@ -207,7 +168,7 @@ I also added the possibility to add additional course grades, in case some cours
 This was a program I started on after learning Android. 
 The reason I started working on it was because one often gets text messages or calls when you cannot reply or answer. 
 Sometimes, people continue to text or call, and I therefore started working on what I call an Auto-reply app. 
-The auto-reply is sent out as a text message (SM)S, which could either be random or a set topic.
+The auto-reply is sent out as a text message (SMS), which could either be random or a set topic.
 \vspace{0.5em}\newline
 The auto-reply could be sent to only to those marked for it, or apply to all in the phones contact list. 
 The auto-reply was restricted by a delay, adjustable through the settings. 

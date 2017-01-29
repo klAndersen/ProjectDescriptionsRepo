@@ -70,7 +70,6 @@ Here I worked on the part related to difficulty level, and updating the students
 Preliminary work for my Master thesis, which was mostly focused on creating a simplistic prototype. 
 The topic for my Master thesis was to develop a Chat Agent that could answer students programming questions,  and also help them learn to be better at asking good questions. 
 The Chat Agent was to be implemented as a module (an XBlock) in the Learning Management System (LMS) Open edx. 
-Python was used, as this is the programming language which the XBlocks are written in, using  PyCharm as editor. 
 \vspace{0.5em}\newline
 During this development, a simple chat interface was created which could connect to StackOverflow.com. 
 One could ask questions, but it only returned the first question/answer it found on Stack Overflow. 
@@ -86,17 +85,41 @@ The plan for further development was to implement AI in my Master thesis using a
 	\item \getprefix{course}: \getprefix{imt4904}
 	\item \getprefix{ide}: \getprefix{pycharm}, \getprefix{mysqlw}, \getprefix{al}, \getprefix{git}, \getprefix{gith}
 	\item \getprefix{progLang}: \getprefix{py2}, \getprefix{py3} (submitted version)
-	\item \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT4904_MasterThesis_Code}
+	\item Code \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT4904_MasterThesis_Code}
+	\item Thesis \getprefix{ghrepo} \url{https://github.com/klAndersen/IMT4904_MasterThesis_LaTex/}
 \end{itemize} 
 % space for readability
-% TODO: Re-view and re-write this
 During the presentation of the thesis topic, I was told that my topic was not just too large for a Master thesis, but even too large for a Ph.d. thesis. 
-It therefore needed to be reduced drastically, which ended up with the topic being an attempt to predict question quality at Stack Overflow by looking at existing questions. 
-\vspace{0.5em}\newline
-In my thesis, I used Arch Linux as an operative system since it was easier to develop for Python. 
-I used MySQL as a database, which contained all the data from Stack Overflow (downloaded from StackExchange Archive). 
-Data was extracted from the database into Python using a library called pandas, which also had the ability to export the data to a CSV file. 
-\vspace{0.5em}\newline
-The questions were originally in HTML format, so they were therefore cleansed using Beautiful Soup 4 (bs4). 
-To get the vocabulary over all the words used in all the selected questions, CountVectorizer from the machine learning library sklearn was used. 
+It therefore needed to be reduced drastically, which ended up with the topic being: "Predicting coding question quality using Stack Overflow ratings". 
+
+\paragraph{Problem description} ~\\
+Most of the systems that have been developed so far focuses on finding the best answer to a question asked by the user. 
+Few, if any, focuses on the quality of the question being asked. 
+What defines a good question, and can we in anyway predict whether or not a new question posted on \getprefix{so} will be considered good or bad by the community?
+There are many users who has either a negative view or relationship in regards to \getprefix{so}.
+Many experience that their questions gets down-voted, closed or even deleted. 
+For some, they simply do not know how to ask an acceptable question.
+Questions related to homework are one example of questions that are not accepted on \getprefix{so}.
+There is even a post on Meta.StackExchange discussing whether or not it should be acceptable to use greetings and sentiments in posts\footnote{
+	\url{http://meta.stackexchange.com/questions/2950/should-hi-thanks-taglines-and-salutations-be-removed-from-posts}
+}.
+Therefore, the question becomes: What is and is not a valid question on \getprefix{so}?
+
+\paragraph{Research questions}
+\begin{itemize}
+	\item What defines a good (coding) question on \getprefix{so}?
+	\item Can we predict a questions quality by using Support Vector Machines (SVM)?
+	\item What type of features increases the accuracy of the SVM?
+\end{itemize}
+
+\paragraph{Development process} ~\\
+The data used in the thesis was downloaded from StackExchange Archive\footnote{\url{https://archive.org/details/stackexchange}}, and inserted into a MySQL database, 
+where the tables were based on the files available.
+Data was extracted from the database into Python using a library called pandas\footnote{\url{http://pandas.pydata.org/}}, which also had the ability to export the data to a CSV file. 
+The questions were originally in HTML format, so they were therefore cleansed using Beautiful Soup 4\footnote{
+	\url{https://www.crummy.com/software/BeautifulSoup/bs4/doc/}
+} (bs4). 
+To get the vocabulary over all the words used in all the selected questions, CountVectorizer from the Machine learning library scikit-learn\footnote{
+	\url{http://scikit-learn.org/stable/}
+} was used. 
 Features were extracted and replaced with feature detectors, and these were then used to create a model for predicting the question quality. 

@@ -6,6 +6,8 @@
 %% see http://tex.stackexchange.com/questions/3033/forcing-linebreaks-in-url
 \PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref}
+%% word indexing
+\usepackage{makeidx}
 %% quotations
 \usepackage{csquotes}% Recommended
 %% Graphics and colors
@@ -44,6 +46,9 @@ columns=fullflexible}
   citecolor = red %Colour of citations
 }
 
-% Prefixes to avoid repetitive typing (e.g. school name, programming languages, etc)
+%% Prefixes to avoid repetitive typing (e.g. school name, programming languages, etc)
 \newcommand\setprefix[2]{\expandafter\def\csname#1\endcsname{#2}}
 \newcommand\getprefix[1]{\csname#1\endcsname}
+
+%% for creating indexes
+\makeindex
